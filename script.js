@@ -7,6 +7,7 @@ function del1(){
 		let l = n - 105;
 		l /= 102;
 		more[l].remove();
+		ol.style.display = "none";
 	}
 }
 
@@ -24,6 +25,7 @@ function del2(){
 			let ket = rel[j].querySelectorAll('th');
 			ket[l].remove();
 		}
+		lo.style.display = "none";
 	}
 }
 
@@ -69,5 +71,5 @@ function Show(event) {
     let h = 104;
     let tso = 102;
     h += (tso * j);
-    lo.style.marginLeft = `${h}px`;
+	lo.style.marginLeft = `${h}px`;
 }   
