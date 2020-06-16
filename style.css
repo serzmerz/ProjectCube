@@ -1,0 +1,80 @@
+.column {
+	width: 96px;
+	height: 96px;
+	background-color: #4dabe4;
+}
+
+.button1 {
+	width: 100px;
+	height: 100px;
+	text-decoration: none;
+	user-select: none;
+	display: inline-block;
+	outline: none;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #f1a417;
+	margin-top: 105px;
+	margin-left: 2px;
+	color: white;
+}
+
+.button2 {
+	width: 100px;
+	height: 100px;
+	text-decoration: none;
+	user-select: none;
+	display: inline-block;
+	outline: none;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #f1a417;
+	color: white;
+	margin-left: 104px;
+	margin-top: 2px;
+}
+
+.button4 {
+	width: 100px;
+	height: 100px;
+	text-decoration: none;
+	user-select: none;
+	display: none;
+	outline: none;
+	text-align: center;
+	vertical-align: middle;
+	background-color: red;
+	color: white;
+	position: absolute;
+	margin-left: 104px;
+	margin-bottom: 2px;
+}
+
+.button3 {
+	width: 100px;
+	height: 100px;
+	text-decoration: none;
+	user-select: none;
+	display: none;
+	outline: none;
+	text-align: center;
+	vertical-align: middle;
+	background-color: red;
+	color: white;
+	position: absolute;
+	margin-top: 105px;
+	margin-right: 2px;
+}
+
+.main {
+	display: inline-block;
+}
+
+.all {
+	display: flex;
+}
+
+.table {
+	margin-left: 102px;
+	margin-top: 102px;
+}
