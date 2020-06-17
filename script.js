@@ -8,6 +8,7 @@ function del1(){
 		l /= 102;
 		more[l].remove();
 		ol.style.display = "none";
+		ol.style.marginTop = `${n - 102}px`;
 	}
 }
 
@@ -26,6 +27,7 @@ function del2(){
 			ket[l].remove();
 		}
 		lo.style.display = "none";
+		lo.style.marginLeft = `${n - 102}px`;
 	}
 }
 
