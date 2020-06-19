@@ -14,9 +14,15 @@
 	text-align: center;
 	vertical-align: middle;
 	background-color: #f1a417;
-	margin-top: 105px;
+	margin-top: 104px;
 	margin-left: 2px;
 	color: white;
+	transition: background-color 1s linear;
+	cursor: pointer;
+}
+
+.button1:hover {
+	background-color: #A4F117;
 }
 
 .button2 {
@@ -30,8 +36,14 @@
 	vertical-align: middle;
 	background-color: #f1a417;
 	color: white;
-	margin-left: 104px;
+	margin-left: 103px;
 	margin-top: 2px;
+	transition: background-color 1s linear;
+	cursor: pointer;
+}
+
+.button2:hover {
+	background-color: #A4F117;
 }
 
 .button4 {
@@ -48,6 +60,12 @@
 	position: absolute;
 	margin-left: 102px;
 	border-bottom: 2px solid white;
+	transition: background-color 1s linear;
+	cursor: pointer;
+}
+
+.button4:hover {
+	background-color: #FA8072;
 }
 
 .button3 {
@@ -64,6 +82,12 @@
 	position: absolute;
 	margin-top: 102px;
 	border-right: 2px solid white;
+	transition: background-color 1s linear;
+	cursor: pointer;
+}
+
+.button3:hover {
+	background-color: #FA8072;
 }
 
 .main {
