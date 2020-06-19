@@ -67,34 +67,40 @@ function add2(){
 function Show(event) {
    	let ol = document.querySelector('.button3');
    	let lo = document.querySelector('.button4');
-    if (ol.style.display != "inline-block" && lo.style.display != "inline-block") { 
-		ol.style.display = "inline-block";
-		lo.style.display = "inline-block";
-    } else {
-    	ol.style.display = "none";
-    	lo.style.display = "none";
-    }
+	ol.style.display = "inline-block";
+	lo.style.display = "inline-block";
     let i = event.target.parentElement.rowIndex;
     let more = document.querySelectorAll('tr');
-    if(more.length == 1){
+    let j = event.target.cellIndex;
+    let old = document.querySelector('tr');
+	let node = old.querySelectorAll('th');
+    if(more.length == 1 && node.length > 1){
+    	ol.style.display = "none";
+    	lo.style.display = "inline-block";
+    } else if(more.length == 1){
     	ol.style.display = "none";
     } else {
     	let n = 102;/**/
     	let ost = 102;
     	n += (ost * i);
     	ol.style.marginTop = `${n}px`;
-    	/*ol.style.display = "inline-block";*/
     }
-    let j = event.target.cellIndex;
-    let old = document.querySelector('tr');
-	let node = old.querySelectorAll('th');
-    if(node.length == 1){
+    if(node.length == 1 && more.length > 1){
+    	lo.style.display = "none";
+    	ol.style.display = "inline-block";
+    } else if(node.length == 1){
     	lo.style.display = "none";
     } else {
     	let h = 102;/**/
     	let tso = 102;
     	h += (tso * j);
 		lo.style.marginLeft = `${h}px`;
-		/*lo.style.display = "inline-block";*/
     }
+}
+
+function UnShow(event){
+	let ol = document.querySelector('.button3');
+   	let lo = document.querySelector('.button4');
+   	ol.style.display = "none";
+    lo.style.display = "none";
 }
