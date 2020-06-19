@@ -4,12 +4,12 @@ function del1(){
 	if(i > 1){
 		let ol = document.querySelector('.button3');
 		let n = parseInt(ol.style.marginTop);
-		let l = n - 102;/**/
-		l /= 102;
+		let l = n - 54;/**/
+		l /= 53;
 		more[l].remove();
 		ol.style.display = "none";
 		if(l == more.length - 1){
-			ol.style.marginTop = `${n - 102}px`;
+			ol.style.marginTop = `${n - 53}px`;
 		}
 	} /*else {
 		let ol = document.querySelector('.button3');
@@ -24,8 +24,8 @@ function del2(){
 	if(i > 1){
 		let lo = document.querySelector('.button4');
 		let n = parseInt(lo.style.marginLeft);
-		let l = n - 102;/**/
-		l /= 102;
+		let l = n - 54;/**/
+		l /= 53;
 		let rel = document.querySelectorAll('tr');
 		for(let j = 0; j < rel.length; j++){
 			let ket = rel[j].querySelectorAll('th');
@@ -33,7 +33,7 @@ function del2(){
 		}
 		lo.style.display = "none";
 		if(l == node.length - 1){
-			lo.style.marginLeft = `${n - 102}px`;
+			lo.style.marginLeft = `${n - 53}px`;
 		}
 	} /*else {
 		let lo = document.querySelector('.button4');
@@ -80,8 +80,8 @@ function Show(event) {
     } else if(more.length == 1){
     	ol.style.display = "none";
     } else {
-    	let n = 102;/**/
-    	let ost = 102;
+    	let n = 54;/**/
+    	let ost = 53;
     	n += (ost * i);
     	ol.style.marginTop = `${n}px`;
     }
@@ -91,8 +91,8 @@ function Show(event) {
     } else if(node.length == 1){
     	lo.style.display = "none";
     } else {
-    	let h = 102;/**/
-    	let tso = 102;
+    	let h = 54;/**/
+    	let tso = 53;
     	h += (tso * j);
 		lo.style.marginLeft = `${h}px`;
     }
