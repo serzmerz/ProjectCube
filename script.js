@@ -19,7 +19,7 @@ function del1(){
 
 function del2(){
 	let old = document.querySelector('tr');
-	let node = old.querySelectorAll('th');
+	let node = old.querySelectorAll('td');
 	let i = node.length;
 	if(i > 1){
 		let lo = document.querySelector('.button4');
@@ -28,7 +28,7 @@ function del2(){
 		l /= 53;
 		let rel = document.querySelectorAll('tr');
 		for(let j = 0; j < rel.length; j++){
-			let ket = rel[j].querySelectorAll('th');
+			let ket = rel[j].querySelectorAll('td');
 			ket[l].remove();
 		}
 		lo.style.display = "none";
@@ -44,7 +44,7 @@ function del2(){
 function add1(){
 	old = document.querySelectorAll('.line');
 	for(let i = 0; i < old.length; i++){
-		let node = document.createElement('th');
+		let node = document.createElement('td');
 		node.classList.add('column');
 		old[i].appendChild(node);
 	}
@@ -53,11 +53,11 @@ function add1(){
 function add2(){
 	let old = document.querySelector('tbody');
 	let our = document.querySelector('tr');
-	let cold = our.querySelectorAll('th');
+	let cold = our.querySelectorAll('td');
 	let one = document.createElement('tr');
 	one.classList.add('line');
 	for(let j = 0; j < cold.length; j++){
-		let ket = document.createElement('th');
+		let ket = document.createElement('td');
 		ket.classList.add('column');
 		one.appendChild(ket);
 	}
@@ -73,7 +73,7 @@ function Show(event) {
     let more = document.querySelectorAll('tr');
     let j = event.target.cellIndex;
     let old = document.querySelector('tr');
-	let node = old.querySelectorAll('th');
+	let node = old.querySelectorAll('td');
     if(more.length == 1 && node.length > 1){
     	ol.style.display = "none";
     	lo.style.display = "inline-block";
