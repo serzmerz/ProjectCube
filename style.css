@@ -4,8 +4,19 @@
 	background-color: #4cabe3;
 	border: 0;
 	padding: 0;
-	vertical-align: baseline;
-	display: table-cell;
+	margin: 0;
+	/*-webkit-border: 0;*/
+	/*transform-origin: 0;*/
+	/*min-width: 50px;
+	max-width: 50px;*/
+	/*vertical-align: baseline;*/
+	/*display: table-cell;*/
+	/*box-sizing: content-box;*/
+	/*background-size: cover;*/
+	/*position: relative;*/
+	/*border-image-width: 0;*/
+	/*font-weight: 0;
+	font-size: 0;*/
 }
 
 .button1 {
@@ -114,8 +125,9 @@
 	margin-left: 50px;
 	margin-top: 50px;
 	border: 1px solid grey;
-	border-spacing: 2px;
-	table-layout: fixed;
+	/*border-spacing: 2px;*/
+	/*table-layout: fixed;*/
 	/*cellpadding: 2px;
 	cellspacing: 2px;*/
+	/*column-width: 50px;*/
 }
