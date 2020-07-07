@@ -1,4 +1,4 @@
-function del1(){
+document.querySelector('.button3').addEventListener('click', () => {
 	let more = document.querySelectorAll('tr');
 	let i = more.length;
 	if(i > 1){
@@ -11,13 +11,10 @@ function del1(){
 		if(l == more.length - 1){
 			ol.style.marginTop = `${n - 53}px`;
 		}
-	} /*else {
-		let ol = document.querySelector('.button3');
-		ol.style.display = "none";
-	}*/
-}
+	}
+});
 
-function del2(){
+document.querySelector('.button4').addEventListener('click', () => {
 	let old = document.querySelector('tr');
 	let node = old.querySelectorAll('td');
 	let i = node.length;
@@ -35,22 +32,19 @@ function del2(){
 		if(l == node.length - 1){
 			lo.style.marginLeft = `${n - 53}px`;
 		}
-	} /*else {
-		let lo = document.querySelector('.button4');
-		lo.style.display = "none";
-	}*/
-}
+	}
+});
 
-function add1(){
+document.querySelector('.button1').addEventListener('click', () => {
 	old = document.querySelectorAll('.line');
 	for(let i = 0; i < old.length; i++){
 		let node = document.createElement('td');
 		node.classList.add('column');
 		old[i].appendChild(node);
 	}
-}
+});
 
-function add2(){
+document.querySelector('.button2').addEventListener('click', () => {
 	let old = document.querySelector('tbody');
 	let our = document.querySelector('tr');
 	let cold = our.querySelectorAll('td');
@@ -62,10 +56,10 @@ function add2(){
 		one.appendChild(ket);
 	}
 	old.appendChild(one);
-}
+});
 
-function Show(event) {
-   	let ol = document.querySelector('.button3');
+document.querySelector('.main').addEventListener('mouseover', () => {
+	let ol = document.querySelector('.button3');
    	let lo = document.querySelector('.button4');
 	ol.style.display = "inline-block";
 	lo.style.display = "inline-block";
@@ -96,11 +90,11 @@ function Show(event) {
     	h += (tso * j);
 		lo.style.marginLeft = `${h}px`;
     }
-}
+});
 
-function UnShow(event){
+document.querySelector('.main').addEventListener('mouseout', () => {
 	let ol = document.querySelector('.button3');
    	let lo = document.querySelector('.button4');
    	ol.style.display = "none";
     lo.style.display = "none";
-}
+});
