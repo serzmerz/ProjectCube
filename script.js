@@ -1,8 +1,8 @@
-document.querySelector('.button3').addEventListener('click', () => {
+document.querySelector('.buttonDeleteLine').addEventListener('click', () => {
 	let more = document.querySelectorAll('tr');
 	let i = more.length;
 	if(i > 1){
-		let ol = document.querySelector('.button3');
+		let ol = document.querySelector('.buttonDeleteLine');
 		let n = parseInt(ol.style.marginTop);
 		let l = n - 54;/**/
 		l /= 53;
@@ -14,12 +14,12 @@ document.querySelector('.button3').addEventListener('click', () => {
 	}
 });
 
-document.querySelector('.button4').addEventListener('click', () => {
+document.querySelector('.buttonDeleteColumn').addEventListener('click', () => {
 	let old = document.querySelector('tr');
 	let node = old.querySelectorAll('td');
 	let i = node.length;
 	if(i > 1){
-		let lo = document.querySelector('.button4');
+		let lo = document.querySelector('.buttonDeleteColumn');
 		let n = parseInt(lo.style.marginLeft);
 		let l = n - 54;/**/
 		l /= 53;
@@ -35,7 +35,7 @@ document.querySelector('.button4').addEventListener('click', () => {
 	}
 });
 
-document.querySelector('.button1').addEventListener('click', () => {
+document.querySelector('.buttonAddColumn').addEventListener('click', () => {
 	old = document.querySelectorAll('.line');
 	for(let i = 0; i < old.length; i++){
 		let node = document.createElement('td');
@@ -44,7 +44,7 @@ document.querySelector('.button1').addEventListener('click', () => {
 	}
 });
 
-document.querySelector('.button2').addEventListener('click', () => {
+document.querySelector('.buttonAddLine').addEventListener('click', () => {
 	let old = document.querySelector('tbody');
 	let our = document.querySelector('tr');
 	let cold = our.querySelectorAll('td');
@@ -59,8 +59,8 @@ document.querySelector('.button2').addEventListener('click', () => {
 });
 
 document.querySelector('.main').addEventListener('mouseover', () => {
-	let ol = document.querySelector('.button3');
-   	let lo = document.querySelector('.button4');
+	let ol = document.querySelector('.buttonDeleteLine');
+   	let lo = document.querySelector('.buttonDeleteColumn');
 	ol.style.display = "inline-block";
 	lo.style.display = "inline-block";
     let i = event.target.parentElement.rowIndex;
@@ -93,8 +93,8 @@ document.querySelector('.main').addEventListener('mouseover', () => {
 });
 
 document.querySelector('.main').addEventListener('mouseout', () => {
-	let ol = document.querySelector('.button3');
-   	let lo = document.querySelector('.button4');
+	let ol = document.querySelector('.buttonDeleteLine');
+   	let lo = document.querySelector('.buttonDeleteColumn');
    	ol.style.display = "none";
     lo.style.display = "none";
 });
