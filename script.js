@@ -4,12 +4,12 @@ document.querySelector('.buttonDeleteLine').addEventListener('click', () => {
 	if(i > 1){
 		let ol = document.querySelector('.buttonDeleteLine');
 		let n = parseInt(ol.style.marginTop);
-		let l = n - 54;/**/
-		l /= 53;
+		let l = n - 53;/**/
+		l /= 52;
 		more[l].remove();
 		ol.style.display = "none";
 		if(l == more.length - 1){
-			ol.style.marginTop = `${n - 53}px`;
+			ol.style.marginTop = `${n - 52}px`;
 		}
 	}
 });
@@ -21,8 +21,8 @@ document.querySelector('.buttonDeleteColumn').addEventListener('click', () => {
 	if(i > 1){
 		let lo = document.querySelector('.buttonDeleteColumn');
 		let n = parseInt(lo.style.marginLeft);
-		let l = n - 54;/**/
-		l /= 53;
+		let l = n - 52;/**/
+		l /= 52;
 		let rel = document.querySelectorAll('tr');
 		for(let j = 0; j < rel.length; j++){
 			let ket = rel[j].querySelectorAll('td');
@@ -30,7 +30,7 @@ document.querySelector('.buttonDeleteColumn').addEventListener('click', () => {
 		}
 		lo.style.display = "none";
 		if(l == node.length - 1){
-			lo.style.marginLeft = `${n - 53}px`;
+			lo.style.marginLeft = `${n - 52}px`;
 		}
 	}
 });
@@ -74,8 +74,8 @@ document.querySelector('.main').addEventListener('mouseover', () => {
     } else if(more.length == 1){
     	ol.style.display = "none";
     } else {
-    	let n = 54;/**/
-    	let ost = 53;
+    	let n = 52;/**/
+    	let ost = 52;
     	n += (ost * i);
     	ol.style.marginTop = `${n}px`;
     }
@@ -85,8 +85,8 @@ document.querySelector('.main').addEventListener('mouseover', () => {
     } else if(node.length == 1){
     	lo.style.display = "none";
     } else {
-    	let h = 54;/**/
-    	let tso = 53;
+    	let h = 53;/**/
+    	let tso = 52;
     	h += (tso * j);
 		lo.style.marginLeft = `${h}px`;
     }
