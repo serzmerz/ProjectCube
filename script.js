@@ -1,100 +1,97 @@
+let rootOfTable = document.querySelector('.table');
+const initialButtonDeleteLineIndent = 52;
+const initialButtonDeleteColumnIndent = 53;
+const buttonSizeForStep = 52;
+let arrayOfLines = rootOfTable.querySelectorAll('tr');
+let buttonDeleteLine = document.querySelector('.buttonDeleteLine');
+let buttonDeleteColumn = document.querySelector('.buttonDeleteColumn');
+
 document.querySelector('.buttonDeleteLine').addEventListener('click', () => {
-	let more = document.querySelectorAll('tr');
-	let i = more.length;
-	if(i > 1){
-		let ol = document.querySelector('.buttonDeleteLine');
-		let n = parseInt(ol.style.marginTop);
-		let l = n - 53;/**/
-		l /= 52;
-		more[l].remove();
-		ol.style.display = "none";
-		if(l == more.length - 1){
-			ol.style.marginTop = `${n - 52}px`;
+	let counter = arrayOfLines.length;
+	if(counter > 1){
+		let roundIndentTop = parseInt(buttonDeleteLine.style.marginTop);
+		let numberOfLine = roundIndentTop - initialButtonDeleteLineIndent;
+		numberOfLine /= buttonSizeForStep;
+		arrayOfLines[numberOfLine].remove();
+		buttonDeleteLine.style.display = "none";
+		if(numberOfLine === arrayOfLines.length - 1){
+			buttonDeleteLine.style.marginTop = `${roundIndentTop - buttonSizeForStep}px`;
 		}
 	}
 });
 
 document.querySelector('.buttonDeleteColumn').addEventListener('click', () => {
-	let old = document.querySelector('tr');
-	let node = old.querySelectorAll('td');
-	let i = node.length;
-	if(i > 1){
-		let lo = document.querySelector('.buttonDeleteColumn');
-		let n = parseInt(lo.style.marginLeft);
-		let l = n - 52;/**/
-		l /= 52;
-		let rel = document.querySelectorAll('tr');
-		for(let j = 0; j < rel.length; j++){
-			let ket = rel[j].querySelectorAll('td');
-			ket[l].remove();
+	let line = rootOfTable.querySelector('tr');
+	let arrayOfColumns = line.querySelectorAll('td');
+	let counter = arrayOfColumns.length;
+	if(counter > 1){
+		let roundIndentLeft = parseInt(buttonDeleteColumn.style.marginLeft);
+		let numberOfColumn = roundIndentLeft - initialButtonDeleteColumnIndent;
+		numberOfColumn /= buttonSizeForStep;
+		let arrayOfLines = rootOfTable.querySelectorAll('tr');
+		for(let count = 0; count < arrayOfLines.length; count++){
+			let cubesInLine = arrayOfLines[count].querySelectorAll('td');
+			cubesInLine[numberOfColumn].remove();
 		}
-		lo.style.display = "none";
-		if(l == node.length - 1){
-			lo.style.marginLeft = `${n - 52}px`;
+		buttonDeleteColumn.style.display = "none";
+		if(numberOfColumn === arrayOfColumns.length - 1){
+			buttonDeleteColumn.style.marginLeft = `${roundIndentLeft - buttonSizeForStep}px`;
 		}
 	}
 });
 
 document.querySelector('.buttonAddColumn').addEventListener('click', () => {
-	old = document.querySelectorAll('.line');
-	for(let i = 0; i < old.length; i++){
-		let node = document.createElement('td');
-		node.classList.add('column');
-		old[i].appendChild(node);
+	for(let count = 0; count < arrayOfLines.length; count++){
+		let cubeNew = document.createElement('td');
+		cubeNew.classList.add('column');
+		arrayOfLines[count].appendChild(cubeNew);
 	}
 });
 
 document.querySelector('.buttonAddLine').addEventListener('click', () => {
-	let old = document.querySelector('tbody');
-	let our = document.querySelector('tr');
-	let cold = our.querySelectorAll('td');
-	let one = document.createElement('tr');
-	one.classList.add('line');
-	for(let j = 0; j < cold.length; j++){
-		let ket = document.createElement('td');
-		ket.classList.add('column');
-		one.appendChild(ket);
+	let tBody = rootOfTable.querySelector('tbody');
+	let randomLine = tBody.querySelector('tr');
+	let arrayOfCubes = randomLine.querySelectorAll('td');
+	let lineNew = document.createElement('tr');
+	lineNew.classList.add('line');
+	for(let count = 0; count < arrayOfCubes.length; count++){
+		let cubeNew = document.createElement('td');
+		cubeNew.classList.add('column');
+		lineNew.appendChild(cubeNew);
 	}
-	old.appendChild(one);
+	tBody.appendChild(lineNew);
 });
 
 document.querySelector('.main').addEventListener('mouseover', () => {
-	let ol = document.querySelector('.buttonDeleteLine');
-   	let lo = document.querySelector('.buttonDeleteColumn');
-	ol.style.display = "inline-block";
-	lo.style.display = "inline-block";
-    let i = event.target.parentElement.rowIndex;
-    let more = document.querySelectorAll('tr');
-    let j = event.target.cellIndex;
-    let old = document.querySelector('tr');
-	let node = old.querySelectorAll('td');
-    if(more.length == 1 && node.length > 1){
-    	ol.style.display = "none";
-    	lo.style.display = "inline-block";
-    } else if(more.length == 1){
-    	ol.style.display = "none";
+	buttonDeleteLine.style.display = "inline-block";
+	buttonDeleteColumn.style.display = "inline-block";
+    let indexOfRow = event.target.parentElement.rowIndex;
+    let indexOfCell = event.target.cellIndex;
+    let randomLine = rootOfTable.querySelector('tr');
+	let arrayOfColumns = randomLine.querySelectorAll('td');
+    if(arrayOfLines.length === 1 && arrayOfColumns.length > 1){
+    	buttonDeleteLine.style.display = "none";
+    	buttonDeleteColumn.style.display = "inline-block";
+    } else if(arrayOfLines.length === 1){
+    	buttonDeleteLine.style.display = "none";
     } else {
-    	let n = 52;/**/
-    	let ost = 52;
-    	n += (ost * i);
-    	ol.style.marginTop = `${n}px`;
+    	let sizeOfLine = initialButtonDeleteLineIndent;
+    	sizeOfLine += (buttonSizeForStep * indexOfRow);
+    	buttonDeleteLine.style.marginTop = `${sizeOfLine}px`;
     }
-    if(node.length == 1 && more.length > 1){
-    	lo.style.display = "none";
-    	ol.style.display = "inline-block";
-    } else if(node.length == 1){
-    	lo.style.display = "none";
+    if(arrayOfColumns.length === 1 && arrayOfLines.length > 1){
+    	buttonDeleteColumn.style.display = "none";
+    	buttonDeleteLine.style.display = "inline-block";
+    } else if(arrayOfColumns.length === 1){
+    	buttonDeleteColumn.style.display = "none";
     } else {
-    	let h = 53;/**/
-    	let tso = 52;
-    	h += (tso * j);
-		lo.style.marginLeft = `${h}px`;
+    	let sizeOfColumn = initialButtonDeleteColumnIndent
+    	sizeOfColumn += (buttonSizeForStep * indexOfCell);
+		buttonDeleteColumn.style.marginLeft = `${sizeOfColumn}px`;
     }
 });
 
 document.querySelector('.main').addEventListener('mouseout', () => {
-	let ol = document.querySelector('.buttonDeleteLine');
-   	let lo = document.querySelector('.buttonDeleteColumn');
-   	ol.style.display = "none";
-    lo.style.display = "none";
+   	buttonDeleteLine.style.display = "none";
+    buttonDeleteColumn.style.display = "none";
 });
